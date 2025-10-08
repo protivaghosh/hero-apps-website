@@ -20,6 +20,11 @@ const Router = createBrowserRouter([
         },
         {
           path:"/apps",
+          loader: async ()=> {
+            const res = await fetch("/AllApps.json");
+            const data = await res.json();
+            return data;
+        },
           element: <Apps></Apps>,
         },
         {
