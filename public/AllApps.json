@@ -1,0 +1,362 @@
+[
+  {
+    "image": "https://example.com/icons/syncflow.png",
+    "title": "SyncFlow Pro",
+    "companyName": "TechNova Solutions",
+    "id": 101,
+    "description": "The ultimate productivity tool for seamless task management and team collaboration across all devices.",
+    "size": 85,
+    "reviews": 12543,
+    "ratingAvg": 4.8,
+    "downloads": 5200000,
+    "ratings": [
+      { "name": "1 star", "count": 100 },
+      { "name": "2 star", "count": 240 },
+      { "name": "3 star", "count": 800 },
+      { "name": "4 star", "count": 3500 },
+      { "name": "5 star", "count": 7903 }
+    ]
+  },
+  {
+    "image": "https://example.com/icons/finwiz.png",
+    "title": "FinWiz Budget Tracker",
+    "companyName": "Global Finance Inc.",
+    "id": 102,
+    "description": "Personal finance app that helps you budget, track expenses, and save money effortlessly.",
+    "size": 32,
+    "reviews": 8900,
+    "ratingAvg": 4.5,
+    "downloads": 1500000,
+    "ratings": [
+      { "name": "1 star", "count": 350 },
+      { "name": "2 star", "count": 500 },
+      { "name": "3 star", "count": 1200 },
+      { "name": "4 star", "count": 3000 },
+      { "name": "5 star", "count": 3850 }
+    ]
+  },
+  {
+    "image": "https://example.com/icons/codelab.png",
+    "title": "CodeLab IDE Mobile",
+    "companyName": "DevSphere Labs",
+    "id": 103,
+    "description": "A lightweight mobile integrated development environment for coding on the go with support for multiple languages.",
+    "size": 112,
+    "reviews": 3200,
+    "ratingAvg": 4.2,
+    "downloads": 450000,
+    "ratings": [
+      { "name": "1 star", "count": 120 },
+      { "name": "2 star", "count": 280 },
+      { "name": "3 star", "count": 600 },
+      { "name": "4 star", "count": 1100 },
+      { "name": "5 star", "count": 1100 }
+    ]
+  },
+  {
+    "image": "https://example.com/icons/zenmind.png",
+    "title": "ZenMind Meditation",
+    "companyName": "Calm Life Studios",
+    "id": 104,
+    "description": "Guided meditation and sleep stories designed to reduce stress and improve focus.",
+    "size": 95,
+    "reviews": 25000,
+    "ratingAvg": 4.9,
+    "downloads": 12000000,
+    "ratings": [
+      { "name": "1 star", "count": 50 },
+      { "name": "2 star", "count": 150 },
+      { "name": "3 star", "count": 500 },
+      { "name": "4 star", "count": 6000 },
+      { "name": "5 star", "count": 18300 }
+    ]
+  },
+  {
+    "image": "https://example.com/icons/socialink.png",
+    "title": "SociaLink",
+    "companyName": "Connect Global",
+    "id": 105,
+    "description": "Next-generation social networking platform focused on privacy and authentic connections.",
+    "size": 64,
+    "reviews": 18500,
+    "ratingAvg": 3.9,
+    "downloads": 8900000,
+    "ratings": [
+      { "name": "1 star", "count": 1500 },
+      { "name": "2 star", "count": 2100 },
+      { "name": "3 star", "count": 3400 },
+      { "name": "4 star", "count": 5500 },
+      { "name": "5 star", "count": 6000 }
+    ]
+  },
+  {
+    "image": "https://example.com/icons/fitpal.png",
+    "title": "FitPal Workout Planner",
+    "companyName": "HealthTrack Solutions",
+    "id": 106,
+    "description": "Customizable workout plans, calorie tracking, and progress monitoring for all fitness levels.",
+    "size": 78,
+    "reviews": 9870,
+    "ratingAvg": 4.6,
+    "downloads": 3100000,
+    "ratings": [
+      { "name": "1 star", "count": 200 },
+      { "name": "2 star", "count": 400 },
+      { "name": "3 star", "count": 800 },
+      { "name": "4 star", "count": 3000 },
+      { "name": "5 star", "count": 5470 }
+    ]
+  },
+  {
+    "image": "https://example.com/icons/driveassist.png",
+    "title": "DriveAssist GPS",
+    "companyName": "RouteMaster Tech",
+    "id": 107,
+    "description": "Real-time navigation with offline maps and traffic updates for commuters and travelers.",
+    "size": 150,
+    "reviews": 45000,
+    "ratingAvg": 4.1,
+    "downloads": 18000000,
+    "ratings": [
+      { "name": "1 star", "count": 3000 },
+      { "name": "2 star", "count": 4500 },
+      { "name": "3 star", "count": 8000 },
+      { "name": "4 star", "count": 14000 },
+      { "name": "5 star", "count": 15500 }
+    ]
+  },
+  {
+    "image": "https://example.com/icons/recipehub.png",
+    "title": "Recipe Hub",
+    "companyName": "Gourmet Apps LLC",
+    "id": 108,
+    "description": "Discover millions of recipes, plan meals, and create grocery lists effortlessly.",
+    "size": 55,
+    "reviews": 6500,
+    "ratingAvg": 4.7,
+    "downloads": 950000,
+    "ratings": [
+      { "name": "1 star", "count": 50 },
+      { "name": "2 star", "count": 150 },
+      { "name": "3 star", "count": 500 },
+      { "name": "4 star", "count": 2500 },
+      { "name": "5 star", "count": 3300 }
+    ]
+  },
+  {
+    "image": "https://example.com/icons/e-reader.png",
+    "title": "E-Reader Library",
+    "companyName": "Digital Books Co.",
+    "id": 109,
+    "description": "Access thousands of free eBooks and customize your reading experience.",
+    "size": 25,
+    "reviews": 1500,
+    "ratingAvg": 4.4,
+    "downloads": 300000,
+    "ratings": [
+      { "name": "1 star", "count": 40 },
+      { "name": "2 star", "count": 60 },
+      { "name": "3 star", "count": 200 },
+      { "name": "4 star", "count": 500 },
+      { "name": "5 star", "count": 700 }
+    ]
+  },
+  {
+    "image": "https://example.com/icons/crypto-pulse.png",
+    "title": "Crypto Pulse Live",
+    "companyName": "BlockChain Metrics",
+    "id": 110,
+    "description": "Real-time cryptocurrency price tracking, portfolio management, and news alerts.",
+    "size": 45,
+    "reviews": 5100,
+    "ratingAvg": 4.3,
+    "downloads": 750000,
+    "ratings": [
+      { "name": "1 star", "count": 250 },
+      { "name": "2 star", "count": 450 },
+      { "name": "3 star", "count": 800 },
+      { "name": "4 star", "count": 1500 },
+      { "name": "5 star", "count": 2100 }
+    ]
+  },
+  {
+    "image": "https://example.com/icons/cloudsync.png",
+    "title": "CloudSync Backup",
+    "companyName": "SecureData Solutions",
+    "id": 111,
+    "description": "Automated cloud backup and storage for photos, videos, and documents with end-to-end encryption.",
+    "size": 50,
+    "reviews": 19800,
+    "ratingAvg": 4.0,
+    "downloads": 4800000,
+    "ratings": [
+      { "name": "1 star", "count": 1800 },
+      { "name": "2 star", "count": 2500 },
+      { "name": "3 star", "count": 4000 },
+      { "name": "4 star", "count": 6000 },
+      { "name": "5 star", "count": 5500 }
+    ]
+  },
+  {
+    "image": "https://example.com/icons/photofusion.png",
+    "title": "PhotoFusion Editor",
+    "companyName": "Creative Suite",
+    "id": 112,
+    "description": "Advanced photo editing with AI filters, professional tools, and quick sharing features.",
+    "size": 180,
+    "reviews": 45000,
+    "ratingAvg": 4.6,
+    "downloads": 15000000,
+    "ratings": [
+      { "name": "1 star", "count": 800 },
+      { "name": "2 star", "count": 1200 },
+      { "name": "3 star", "count": 3000 },
+      { "name": "4 star", "count": 15000 },
+      { "name": "5 star", "count": 25000 }
+    ]
+  },
+  {
+    "image": "https://example.com/icons/gamer-lounge.png",
+    "title": "Gamer Lounge Chat",
+    "companyName": "Nexus Gaming",
+    "id": 113,
+    "description": "Connect with gamers, organize teams, and voice chat while playing your favorite titles.",
+    "size": 90,
+    "reviews": 7000,
+    "ratingAvg": 3.8,
+    "downloads": 2500000,
+    "ratings": [
+      { "name": "1 star", "count": 800 },
+      { "name": "2 star", "count": 1000 },
+      { "name": "3 star", "count": 1500 },
+      { "name": "4 star", "count": 2000 },
+      { "name": "5 star", "count": 1700 }
+    ]
+  },
+  {
+    "image": "https://example.com/icons/languagemaster.png",
+    "title": "Language Master Pro",
+    "companyName": "Fluent Futures",
+    "id": 114,
+    "description": "Learn new languages through engaging lessons, interactive exercises, and native speaker audio.",
+    "size": 130,
+    "reviews": 11000,
+    "ratingAvg": 4.9,
+    "downloads": 4000000,
+    "ratings": [
+      { "name": "1 star", "count": 20 },
+      { "name": "2 star", "count": 80 },
+      { "name": "3 star", "count": 300 },
+      { "name": "4 star", "count": 3000 },
+      { "name": "5 star", "count": 7600 }
+    ]
+  },
+  {
+    "image": "https://example.com/icons/weathercast.png",
+    "title": "WeatherCast Pro",
+    "companyName": "SkyView Technologies",
+    "id": 115,
+    "description": "Accurate hourly and 7-day weather forecasts with radar and severe weather alerts.",
+    "size": 28,
+    "reviews": 32000,
+    "ratingAvg": 4.7,
+    "downloads": 11000000,
+    "ratings": [
+      { "name": "1 star", "count": 400 },
+      { "name": "2 star", "count": 600 },
+      { "name": "3 star", "count": 1500 },
+      { "name": "4 star", "count": 10000 },
+      { "name": "5 star", "count": 19500 }
+    ]
+  },
+  {
+    "image": "https://example.com/icons/security-guard.png",
+    "title": "Security Guard VPN",
+    "companyName": "Privacy First",
+    "id": 116,
+    "description": "Fast and secure Virtual Private Network (VPN) service to protect your online identity and data.",
+    "size": 60,
+    "reviews": 16000,
+    "ratingAvg": 4.2,
+    "downloads": 6500000,
+    "ratings": [
+      { "name": "1 star", "count": 1000 },
+      { "name": "2 star", "count": 1500 },
+      { "name": "3 star", "count": 3000 },
+      { "name": "4 star", "count": 4500 },
+      { "name": "5 star", "count": 6000 }
+    ]
+  },
+  {
+    "image": "https://example.com/icons/music-stream.png",
+    "title": "MusicStream Unlimited",
+    "companyName": "Rhythm Corp",
+    "id": 117,
+    "description": "Stream millions of songs ad-free with offline playback and personalized playlists.",
+    "size": 105,
+    "reviews": 85000,
+    "ratingAvg": 4.4,
+    "downloads": 35000000,
+    "ratings": [
+      { "name": "1 star", "count": 6000 },
+      { "name": "2 star", "count": 8000 },
+      { "name": "3 star", "count": 15000 },
+      { "name": "4 star", "count": 25000 },
+      { "name": "5 star", "count": 31000 }
+    ]
+  },
+  {
+    "image": "https://example.com/icons/home-automation.png",
+    "title": "Home Automation Hub",
+    "companyName": "SmartLiving Systems",
+    "id": 118,
+    "description": "Control all your smart home devices from a single, intuitive dashboard.",
+    "size": 40,
+    "reviews": 2100,
+    "ratingAvg": 3.7,
+    "downloads": 600000,
+    "ratings": [
+      { "name": "1 star", "count": 500 },
+      { "name": "2 star", "count": 400 },
+      { "name": "3 star", "count": 600 },
+      { "name": "4 star", "count": 350 },
+      { "name": "5 star", "count": 250 }
+    ]
+  },
+  {
+    "image": "https://example.com/icons/quiz-world.png",
+    "title": "Quiz World Trivia",
+    "companyName": "Brain Games Studio",
+    "id": 119,
+    "description": "Challenge your friends with thousands of trivia questions across various categories.",
+    "size": 70,
+    "reviews": 3800,
+    "ratingAvg": 4.1,
+    "downloads": 1100000,
+    "ratings": [
+      { "name": "1 star", "count": 180 },
+      { "name": "2 star", "count": 320 },
+      { "name": "3 star", "count": 700 },
+      { "name": "4 star", "count": 1200 },
+      { "name": "5 star", "count": 1400 }
+    ]
+  },
+  {
+    "image": "https://example.com/icons/stock-invest.png",
+    "title": "Stock Invest Portfolio",
+    "companyName": "WealthPro Tech",
+    "id": 120,
+    "description": "Track your stock investments, view market data, and execute trades commission-free.",
+    "size": 58,
+    "reviews": 9200,
+    "ratingAvg": 4.5,
+    "downloads": 2800000,
+    "ratings": [
+      { "name": "1 star", "count": 150 },
+      { "name": "2 star", "count": 350 },
+      { "name": "3 star", "count": 900 },
+      { "name": "4 star", "count": 3000 },
+      { "name": "5 star", "count": 4800 }
+    ]
+  }
+]
