@@ -1,11 +1,24 @@
 import React from 'react';
 import logoImg from '../../assets/logo.png'
 import { FaGithub } from "react-icons/fa";
+import { Link, NavLink } from 'react-router';
 const Navbar = () => {
   const links=<>
-  <li><a className='hover:text-[#8956eb] hover:border-b-2  hover:border-[#8956eb]'>Home</a></li>
-  <li><a className='hover:text-[#8956eb] hover:border-b-2  hover:border-[#8956eb]'>Apps</a></li>
-  <li><a className='hover:text-[#8956eb] hover:border-b-2  hover:border-[#8956eb]'>Installation</a></li>
+ <NavLink to='/'className={({ isActive }) => 
+            isActive 
+            ? 'text-[#8956eb] border-b-2 border-[#8956eb] transition-all duration-200' 
+            : 'text-gray-600'
+        }><li><a>Home</a></li></NavLink> 
+ <NavLink to='/apps' className={({ isActive }) => 
+            isActive 
+            ? 'text-[#8956eb] border-b-2 border-[#8956eb] transition-all duration-200' 
+            : 'text-gray-600'
+        }><li><a>Apps</a></li></NavLink> 
+ <NavLink to='/installation' className={({ isActive }) => 
+            isActive 
+            ? 'text-[#8956eb] border-b-2 border-[#8956eb] transition-all duration-200' 
+            : 'text-gray-600'
+        }><li><a>Installation</a></li></NavLink>
   </>
     return (
         <div>
@@ -31,7 +44,9 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white"><FaGithub />Contribute</a>
+  <Link to='https://github.com/protivaghosh'>
+  <a className="btn bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white"><FaGithub />Contribute</a> 
+  </Link>  
   </div>
 </div>
         </div>
