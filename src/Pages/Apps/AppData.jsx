@@ -1,12 +1,14 @@
 import React from 'react';
 import { FaDownload, FaStar } from 'react-icons/fa'; 
+import { Link } from 'react-router';
 
 
 const AppData = ({App}) => {
-    const {image, title, downloads, ratingAvg} = App 
+    const {image, title, downloads, ratingAvg, id} = App 
     const displayRating = ratingAvg > 4.5 ? 5 : ratingAvg.toFixed(1);
     return (
-        <div>
+        <Link to={`/AppDetails/${id}`}>
+            <div>
              <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
             <div className="flex items-center justify-center mt-4">
                 <img 
@@ -34,6 +36,8 @@ const AppData = ({App}) => {
             </div>
         </div>
         </div>
+        </Link>
+        
     );
 };
 
