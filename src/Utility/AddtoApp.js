@@ -1,23 +1,35 @@
-const getStoreApp =()=>{
-    const installApp= localStorage.getItem("install");
-    if(installApp){
-        const installationData =JSON.parse(installApp);
-        return installationData;  
-    }
-    else{
-        return[];
-    }
+import Swal from 'sweetalert2';
+
+const getStoreApp = () => {
+  const installApp = localStorage.getItem("install");
+  if (installApp) {
+    return JSON.parse(installApp);
+  } else {
+    return [];
+  }
 };
 
-const addToApp=(id)=>{
-    const installationData = getStoreApp();
-    if (installationData.includes(id)){
-        alert("id already exist")
-    }
-    else{
-        installationData.push(id);
-        const data = JSON.stringify(installationData);
-        localStorage.setItem("install", data);
-    }
-}
-export{addToApp, getStoreApp};
+const addToApp = (id) => {
+  const installationData = getStoreApp();
+  if (installationData.includes(id)) {
+    Swal.fire({
+      title: 'Already Added!',
+      text: 'This app is already in your list.',
+      icon: 'warning',
+      confirmButtonText: 'OK'
+    });
+  } else {
+    installationData.push(id);
+    localStorage.setItem("install", JSON.stringify(installationData));
+  }
+};
+
+
+const removeFromApp = (id) => {
+  const stored = getStoreApp();
+  const updated = stored.filter(appId => appId.toString() !== id.toString());
+  localStorage.setItem("install", JSON.stringify(updated)); 
+};
+
+
+export { addToApp, getStoreApp, removeFromApp };

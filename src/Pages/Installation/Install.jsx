@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { getStoreApp } from '../../Utility/AddtoApp';
+import { getStoreApp, removeFromApp } from '../../Utility/AddtoApp';
 import { IoMdArrowDropdown } from "react-icons/io";
+import Swal from 'sweetalert2';
 
 
 
@@ -12,17 +13,45 @@ const formatCount = (num) => {
 
 const Install = ({data}) => {
     const [installedApps, setInstalledApps] = useState([]);
+     const [sortType, setSortType] = useState("");
+
     
     useEffect(() => {
-        if (!data) return; 
-      const installedAppData = getStoreApp();
-        const myInstallApps = data.filter(app => installedAppData.includes(app.id.toString()));  
-       
+  const installedAppData = getStoreApp();
+  const myInstallApps = data.filter(app => installedAppData.includes(app.id.toString()));  
+  setInstalledApps(myInstallApps);
+}, [data]);
 
-        setInstalledApps(myInstallApps);
-    }, [data]); 
 
-    
+
+     //Sorting Function
+  const handleSort = (type) => {
+    setSortType(type);
+
+    let sorted = [...installedApps];
+    if (type === "high-low") {
+      sorted.sort((a, b) => b.downloads - a.downloads); 
+    } else if (type === "low-high") {
+      sorted.sort((a, b) => a.downloads - b.downloads);
+    }
+    setInstalledApps(sorted);
+  };
+
+   // Uninstall Function
+  const handleUninstall = (id, title) => {
+    const updated = installedApps.filter(app => app.id !== id);
+    setInstalledApps(updated);
+    removeFromApp(id);
+     Swal.fire({
+      toast: true,
+      position: "top-end",
+      icon: "success",
+      title: `"${title}" uninstalled successfully!`,
+      showConfirmButton: false,
+      timer: 1800,
+      timerProgressBar: true,
+    });
+  };
     return (
         <div>
             <div className='flex justify-between items-center py-10'>
@@ -30,17 +59,17 @@ const Install = ({data}) => {
             <details className="dropdown">
   <summary className="btn m-1">Sort By Size<IoMdArrowDropdown /></summary>
   <ul className="menu dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
-    <li><a>Item 1</a></li>
-    <li><a>Item 2</a></li>
+    <li><button onClick={() => handleSort("high-low")}>High-Low</button></li>
+    <li><button onClick={() => handleSort("low-high")}>Low-High</button></li>
   </ul>
 </details>
   </div>
-    <div className="min-h-screen  p-2 sm:p-4">
+    <div className="min-h-screen p-2 sm:p-4">
              {installedApps.length === 0 ? (
          <p className="text-gray-500">You haven't installed any apps yet.</p>
             ) : (
           <div className="flex flex-col space-y-4 max-w-4xl mx-auto">
-            {installedApps.map(app => (<div key={app.id} className="flex items-center justify-between p-4 bg-white border border-gray-200 rounded-lg shadow-md"> 
+            {installedApps.map(app => (<div key={app.id} className="flex flex-col sm:flex-row sm:items-center items-center justify-between p-4 bg-white border border-gray-200 rounded-lg shadow-md"> 
                 <div className="flex items-center flex-grow">
                      <div className="w-16 h-16 mr-4 flex-shrink-0 rounded-xl overflow-hidden bg-gray-100">
         <img src={app.image}  alt={`${app.title} icon`} 
@@ -67,7 +96,7 @@ const Install = ({data}) => {
                                 </div>
                             </div>
                             
-                            <button className="px-4 py-1.5 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-lg shadow-md transition-colors text-sm ml-4 flex-shrink-0">
+                            <button  onClick={() => handleUninstall(app.id, app.title)} className="px-4 py-1.5 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-lg shadow-md transition-colors text-sm ml-4 flex-shrink-0">
                                 Uninstall
                             </button>
                         </div>
