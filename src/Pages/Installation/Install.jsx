@@ -64,7 +64,7 @@ const Install = ({data}) => {
   </ul>
 </details>
   </div>
-    <div className="min-h-screen p-2 sm:p-4">
+    <div className="p-2 sm:p-4">
              {installedApps.length === 0 ? (
          <p className="text-gray-500">You haven't installed any apps yet.</p>
             ) : (
@@ -96,7 +96,7 @@ const Install = ({data}) => {
                                 </div>
                             </div>
                             
-                            <button  onClick={() => handleUninstall(app.id, app.title)} className="px-4 py-1.5 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-lg shadow-md transition-colors text-sm ml-4 flex-shrink-0">
+                            <button  onClick={() => handleUninstall(app.id, app.title)} className="px-4 py-1.5 bg-teal-600 hover:bg-teal-700 text-white font-semibold rounded-lg shadow-md transition-colors text-sm ml-4 flex-shrink-0">
                                 Uninstall
                             </button>
                         </div>

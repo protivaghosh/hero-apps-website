@@ -11,14 +11,7 @@ const getStoreApp = () => {
 
 const addToApp = (id) => {
   const installationData = getStoreApp();
-  if (installationData.includes(id)) {
-    Swal.fire({
-      title: 'Already Added!',
-      text: 'This app is already in your list.',
-      icon: 'warning',
-      confirmButtonText: 'OK'
-    });
-  } else {
+  if (installationData.includes(id)) {''} else {
     installationData.push(id);
     localStorage.setItem("install", JSON.stringify(installationData));
   }

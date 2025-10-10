@@ -25,10 +25,11 @@ const AllApps = ({ data }) => {
     return (
         <div className='w-11/12 mx-auto mt-16 pb-16'>
             <div className='flex justify-between items-center flex-col md:flex-row'>
-                <h3 className='md:text-2xl font-bold'>({data.length}) Apps Found</h3>
+                <h3 className='md:text-2xl font-bold'>({filteredApp.length}) Apps Found</h3>
                 <div className='flex items-center justify-center text-xl bg-white py-2 px-4'>
                     <CiSearch />
                     <input
+                        value={searchTerm}
                         type="search"
                         placeholder='Search Apps'
                         className='px-2'

@@ -34,9 +34,9 @@ const Navbar = () => {
        {links}
       </ul>
     </div>
-    <a className="btn btn-ghost md:text-xl text-[#8956eb]">
+   <Link to='/'><a className="btn btn-ghost md:text-xl text-[#8956eb]">
       <img className='w-5 h-5 md:w-10 md:h-10' src={logoImg} alt="" />
-      HERO.IO</a>
+      HERO.IO</a></Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">

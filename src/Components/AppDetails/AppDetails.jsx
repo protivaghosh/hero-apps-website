@@ -1,17 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom'; 
 import { addToApp } from '../../Utility/AddtoApp';
+import {
+  BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer
+} from 'recharts';
+import Swal from 'sweetalert2';
+import errorImg from'../../assets/App-Error.png'
+
 
 const AppDetails = () => {
     const {id} = useParams(); 
     const data = useLoaderData();
     const app = data.find(app => app.id.toString() === id); 
 
-    
-    if (!app) {
-        return <div className="p-8 text-center text-gray-700 bg-gray-50 min-h-screen">App Data Not Available. Check your loader data or ID.</div>;
-    }
-    
+
+
+     if (!app) {
+    return (
+      <div className="flex flex-col justify-center items-center h-screen bg-gray-50 text-gray-700">
+        <img 
+          src={errorImg}
+          alt="App Not Found" 
+          className="w-48 h-48 mb-6 opacity-80"
+        />
+        <h1 className="text-3xl font-bold text-teal-600 mb-2">App Not Found</h1>
+        
+      </div>
+    );
+  }
+
     const {title,companyName,downloads,reviews,ratingAvg, ratings,description,size, image} = app;
    
     
@@ -20,12 +37,30 @@ const AppDetails = () => {
         if (num >= 1000) return `${(num / 1000).toFixed(1)}K`;
         return num;
     };
-    const totalReviews = reviews;
-    const fiveStarCount = ratings.find(r => r.name === "5 star")?.count || 0;
 
+   const chartData = ratings.map(r => ({
+    name: r.name,
+    count: r.count
+  })).sort((a, b) => parseInt(b.name) - parseInt(a.name));
+
+
+  const [installed, setInstalled] = useState(false);
     const handleInstall =(appIdString)=>{
         addToApp(appIdString);
+         setInstalled(true);
+    Swal.fire({
+    toast: true,
+    position: "top-end",
+    icon: "success",
+    title: `"${title}" installed successfully!`,
+    showConfirmButton: false,
+    timer: 1800,
+    timerProgressBar: true,
+  });
     }
+
+    
+
 
     return (
         <div>
@@ -69,56 +104,38 @@ const AppDetails = () => {
                                 <p className="text-sm text-gray-500">Total Reviews</p>
                             </div>
                         </div>
-                        
-                        <button onClick={()=>handleInstall(id)} className="mt-4 sm:mt-0 px-6 py-2 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-full shadow-md transition-colors">
-                            Install Now ({size}MB)
-                        </button>
+           
+
+              <button onClick={() => handleInstall(id)}
+              disabled={installed}
+              className={`mt-4 sm:mt-0 px-6 py-2 font-semibold rounded-full shadow-md transition-colors  text-white bg-teal-600 hover:bg-teal-700
+                ${installed }`} >
+              {installed ? 'Installed' : `Install Now (${size}MB)`}
+            </button>
                     </div>
 
                     
                     <h2 className="text-xl font-semibold mb-3 text-gray-800">Ratings ({formatCount(reviews)})</h2>
                     <div className="flex flex-col space-y-2 mb-6 p-4 bg-gray-100 rounded-md">
-                        
-                        
-                        <div className="flex items-center space-x-4 mb-4">
-                            
-                            <div className="text-4xl font-bold text-orange-500">
-                                {ratingAvg.toFixed(1)}
-                            </div>
-                            <div className="flex flex-col text-sm">
-                                <p className="text-gray-700">{formatCount(fiveStarCount)} 5-star ratings</p>
-                                <p className="text-gray-500">{totalReviews} total reviews</p>
-                            </div>
-                        </div>
-
-                        
-                        {[...ratings].sort((a, b) => parseInt(b.name) - parseInt(a.name)).map((rating) => {
-                            const starLevel = rating.name.split(' ')[0];
-                            const percentage = (rating.count / totalReviews) * 100;
-                            
-                            return (
-                                <div key={rating.name} className="flex items-center text-sm">
-                                    <span className="w-8 text-right text-gray-600 mr-2">{starLevel}</span>
-                                    <div className="flex-1 h-3 bg-gray-300 rounded-full overflow-hidden">
-                                        
-                                        <div 
-                                            className="h-full bg-orange-500" 
-                                            style={{ width: `${percentage.toFixed(0)}%` }}
-                                            title={`${percentage.toFixed(1)}%`}
-                                        ></div>
-                                    </div>
-                                    <span className="w-12 text-right text-gray-600 ml-2 text-xs">{formatCount(rating.count)}</span>
-                                </div>
-                            );
-                        })}
+                     {/* Chart Section */}
+        <h2 className="text-xl font-semibold mb-3 text-gray-800">Ratings Overview</h2>
+        <div className="bg-gray-100 p-4 rounded-md mb-6">
+          <ResponsiveContainer width="100%" height={300}>
+            <BarChart data={chartData}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="name" />
+              <YAxis />
+              <Tooltip />
+              <Bar dataKey="count" fill="#f97316" radius={[10, 10, 0, 0]} />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>   
+                     
                     </div>
                 <h2 className="text-xl font-semibold mb-3 text-gray-800">Description</h2>
                     <div className="text-gray-700 leading-relaxed bg-gray-100 p-4 rounded-md">
                         <p>{description}</p>
-                        <p className="mt-3 text-sm text-gray-500">
-                            Take control of your finances with powerful tracking tools, insightful reports, and customized savings goals. Never lose track of your spending again.
-                        </p>
-                    </div>
+                       </div>
                 </div>
             </div>
         </div>
