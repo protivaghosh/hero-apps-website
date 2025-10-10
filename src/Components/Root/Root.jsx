@@ -1,33 +1,39 @@
-import React from 'react';
-import Navbar from '../Navbar/Navbar';
-import { Outlet, useNavigation } from 'react-router';
-import Footer from '../Footer/Footer';
-
-// Loader Component
-const Loader = () => (
-  <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-white/70 z-50">
-    {/* DaisyUI Spinner */}
-    <div className="w-16 h-16">
-      <span className="loading loading-spinner loading-lg text-primary"></span>
-    </div>
-  </div>
-);
+import React, { useState, useEffect } from "react";
+import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
+import { Outlet, useNavigation } from "react-router-dom";
+import Loader from "../../Loader/Loader";
 
 const Root = () => {
   const navigation = useNavigation();
-   const isLoading = navigation.state === "loading";
+  const [showLoader, setShowLoader] = useState(false);
 
+  useEffect(() => {
+    let timer;
+    if (navigation.state === "loading") {
+      setShowLoader(true);
+     timer = setTimeout(() => {
+        setShowLoader(false);
+      }, 2000);
+    } else {
+      
+      timer = setTimeout(() => setShowLoader(false), 2000);
+    }
+
+    return () => clearTimeout(timer);
+  }, [navigation.state]);
 
   return (
-    <div className="relative flex flex-col min-h-screen">
-      <Navbar></Navbar>
-      
-      {/* Show loader when navigating */}
-     {isLoading && <Loader />}
-      
-      <div className='flex-1'><Outlet></Outlet></div>
-      
-      <Footer></Footer>
+    <div className="flex flex-col min-h-screen">
+      <Navbar />
+
+      {showLoader && <Loader />}
+
+      <main className="flex-1">
+        <Outlet />
+      </main>
+
+      <Footer />
     </div>
   );
 };

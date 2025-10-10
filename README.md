@@ -27,8 +27,6 @@ This project follows modern React practices including `useState`, `useEffect`, a
 - Loading animations for better UX.
 - Sort apps by downloads or ratings.
 
-## Getting Started
+## Live link
 
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/your-repo.git
+
