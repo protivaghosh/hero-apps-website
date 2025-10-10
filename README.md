@@ -29,4 +29,4 @@ This project follows modern React practices including `useState`, `useEffect`, a
 
 ## Live link
 
-
+https://hero-apps-website.netlify.app/
